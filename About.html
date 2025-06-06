@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIP</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .main {
+        height: 100vh;
+        margin: auto;
+        width: 1170px;
+        background: #f1f0ef;
+      }
+      .topcontact a {
+        font-size: 16px;
+        color: #fff;
+        font-size: ;
+      }
+      .topcontact {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 40px;
+        background-color: #343130;
+      }
+      .left-contact {
+        padding-left: 10px;
+        gap: 10px;
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+      }
+      .right-contact {
+        padding-right: 10px;
+        gap: 10px;
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+      }
+      /*  */
+      .menu-container {
+        display: flex;
+        justify-content: space-between;
+        height: 140px;
+        width: 100%;
+        background: white;
+      }
+      .logo {
+        width: 165px;
+        margin-top: 10px;
+        margin-left: 50px;
+        cursor: pointer;
+      }
+      .menu-bar {
+        display: flex;
+        height: 100%;
+        width: 900px;
+      }
+      .list {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        align-items: end;
+        margin-bottom: 8px;
+      }
+      .list li {
+        list-style: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .list li a {
+        color: black;
+        font-size: 18px;
+        transition: 0.4s;
+      }
+      .list li:hover a {
+        color: #00a8ec;
+        border-bottom: 1px solid #00a8ec;
+      }
+      /*  */
+
+      .middle-container {
+        display: flex;
+        width: 100%;
+        background: #f1f0ef;
+        background-color: white;
+        border: 20px solid #f1f0ef;
+        border-bottom: none;
+        height: 735px;
+      }
+      .middle-left {
+        height: 100%;
+        width: 260px;
+      }
+      .middle-left-li {
+        height: 40px;
+        text-align: center;
+        border: 3px solid white;
+        background-color: #00a8ec;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 10px;
+        margin-left: 10px;
+        width: 250px;
+        padding-top: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .middle-left-li a {
+        color: white;
+      }
+      .middle-left-bottom {
+        width: 250px;
+        height: 297px;
+        overflow: hidden;
+        margin-left: 12px;
+        margin-top: 10px;
+        background: white;
+        border: 1px solid black;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      .news {
+        width: 100%;
+        height: 45px;
+        background: #ef9c00;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        padding-top: 15px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      .news span {
+        cursor: pointer;
+      }
+      .news-list li img {
+        border-radius: 50%;
+      }
+      .news-list {
+        display: flex;
+        flex-direction: column;
+      }
+      .news-list li {
+        margin: 10px 0px 20px 10px;
+      }
+      .middle-right {
+        width: 850px;
+        margin-left: 15px;
+      }
+      .images img {
+        width: 850px;
+        height: 411px;
+        background: #f1f0ef;
+        margin-bottom: 15px;
+      }
+      .courses-container {
+        width: 99%;
+        height: 270px;
+        background: white;
+        padding: 0px 10px 10px 0px;
+      }
+      .course-text {
+        background: #f1f0ef;
+        width: 170px;
+        height: 50px;
+        text-align: center;
+        /* padding-top: 5px; */
+        color: #00a8ec;
+      }
+      .course-box {
+        display: flex;
+        width: 100%;
+      }
+      .course-box-left {
+        width: 50%;
+        height: 236px;
+      }
+      .icon {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding-top: 20px;
+      }
+      .icon img {
+        width: 34px;
+        height: 34px;
+        background: #e6611c;
+        border-radius: 50%;
+        margin-left: 20px;
+      }
+      .course-box-right {
+        width: 50%;
+        height: 100%;
+      }
+      .course-box-right {
+        width: 50%;
+        height: 236px;
+      }
+      .work-heading {
+        padding: 20px 0px 15px 0px;
+        text-align: center;
+        background: #f1f0ef;
+        color: #00a8ec;
+        font-weight: bold;
+        word-spacing: 5px;
+        font-size: 30px;
+      }
+      .work-container {
+        height: 220px;
+        margin: 0px 30px 20px 30px;
+        background: white;
+        display: flex;
+        border: 1px solid black;
+      }
+      .how-img-box {
+        height: 220px;
+        width: 280px;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 0px 0px 0px black;
+      }
+      .how-img1 {
+        width: 100%;
+        height: 100%;
+        background: 168px 150px;
+        background: url("./images/how/HOW-WE-WORK1.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .how-img1-color {
+        width: 100%;
+        height: 100%;
+        background: rgba(188, 72, 109, 0.8);
+        padding-top: 70px;
+      }
+      .how-img2-color {
+        background: rgba(233, 79, 113, 0.8);
+        padding-top: 70px;
+        width: 100%;
+        height: 100%;
+      }
+      .how-img3-color {
+        background: rgba(237, 136, 56, 0.8);
+        padding-top: 70px;
+        width: 100%;
+        height: 100%;
+      }
+      .how-img1-color {
+        background: rgba(244, 183, 65, 0.8);
+        padding-top: 70px;
+        width: 100%;
+        height: 100%;
+      }
+      .how-img2 {
+        width: 100%;
+        height: 100%;
+        background: 168px 150px;
+        background: url("./images/how/HOW-WE-WORK2.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .how-img3 {
+        width: 100%;
+        height: 100%;
+        background: 168px 150px;
+        background: url("images/how/HOW-WE-WORK3.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .how-img4 {
+        width: 100%;
+        height: 100%;
+        background: 168px 150px;
+        background: url("images/how/HOW-WE-WORK4.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .footer {
+        height: 360px;
+        width: 1170px;
+      }
+      .footer-top-container {
+        display: flex;
+        height: 295px;
+        width: 1170px;
+        background: #343130;
+        padding-top: 25px;
+      }
+      .quick-links-container {
+        height: 100%;
+        width: 225px;
+        padding-left: 70px;
+      }
+      .quick-links-container h2 {
+        letter-spacing: 1px;
+        color: #efeceb;
+        height: 40px;
+      }
+      .list2 li {
+        list-style: none;
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+      .list2 li a {
+        color: #efeceb;
+      }
+      .footer-train-container {
+        height: 100%;
+        width: 250px;
+        margin-left: 50px;
+      }
+      .footer-train-container h2 {
+        letter-spacing: 1px;
+        color: #efeceb;
+        height: 40px;
+      }
+      .train-count {
+        margin-left: 10px;
+        width: 100%;
+        height: 100%;
+      }
+      .train-count li {
+        list-style: none;
+        font-size: 18px;
+        padding-top: 15px;
+      }
+      .train-count li a {
+        color: #efeceb;
+      }
+      .footer-contact-container h2 {
+        letter-spacing: 1px;
+        color: #efeceb;
+        height: 40px;
+      }
+      #contact-details li {
+        list-style: none;
+        font-size: 18px;
+        padding-top: 15px;
+        color: #efeceb;
+      }
+      .social-links {
+        padding-top: 20px;
+        display: flex;
+      }
+      .social-links li {
+        list-style: none;
+        margin-inline: 10px;
+      }
+      .footer-contact-container {
+        width: 300px;
+        margin-left: 20px;
+      }
+      .page-status {
+        justify-content: space-between;
+        display: flex;
+        width: 96%;
+        height: 30px;
+        background: white;
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <!--  -->
+      <header>
+        <div class="topcontact">
+          <div class="left-contact">
+            <img src="./images/web.png" alt="image not found..." />
+            <div class="top-left-iip">
+              <a href="https://www.iipacademy.com" title="www.iipacademy.com"
+                >www.iipacademy.com</a
+              >
+            </div>
+          </div>
+          <div class="right-contact">
+            <img src="./images/web.png" alt="image not found..." />
+            <div class="top-right-iip">
+              <a href="https://www.iipacademy.com" title="info@iipacademy.com"
+                >info@iipacademy.com</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="menu-container">
+          <img src="images/logo.png" class="logo" />
+          <div class="menu-bar">
+            <ul class="list">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Enquiry</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <!-- middle part start here -->
+      <div class="middle-container">
+        <div class="middle-left">
+          <div class="middle-left-li"><a href="Home.html">Home</a></div>
+          <div class="middle-left-li"><a href="About.html">About Us</a></div>
+          <div class="middle-left-li"><a href="#">Courses</a></div>
+          <div class="middle-left-li"><a href="#">Gallery</a></div>
+          <div class="middle-left-li"><a href="#">Enquiry</a></div>
+          <div class="middle-left-li"><a href="#">Contact Us</a></div>
+
+          <div class="middle-left-bottom">
+            <div class="news">
+              <span>News</span>
+            </div>
+            <ul class="news-list">
+              <li>
+                <img src="images/dot.jpg" alt="dot" /> ipsum dolor sit amet,
+              </li>
+              <li>
+                <img src="images/dot.jpg" alt="dot" /> ipsum dolor sit amet,
+              </li>
+              <li>
+                <img src="images/dot.jpg" alt="dot" /> ipsum dolor sit amet,
+              </li>
+              <li>
+                <img src="images/dot.jpg" alt="dot" /> ipsum dolor sit amet,
+              </li>
+              <li>
+                <img src="images/dot.jpg" alt="dot" /> ipsum dolor sit amet,
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="middle-right">
+          <div class="page-status">
+            <h1>About Us</h1>
+            <h2>
+              <i
+                ><a style="color: #00a8ec" href="Home.html">Home</a>/About
+                Us:</i
+              >
+            </h2>
+          </div>
+          <div class="about-content">
+            <p
+              style="
+                margin-left: 20px;
+                margin-top: 40px;
+                font-size: 18px;
+                word-spacing: 2px;
+              "
+            >
+              At IIP Academy, students always had the access to Major & Minor
+              Projects in Website Development (PHP / MySQL)
+            </p>
+
+            <p
+              style="
+                margin-left: 20px;
+                margin-top: 40px;
+                font-size: 18px;
+                word-spacing: 2px;
+              "
+            >
+              IIP Academy Provide best training in .NET & PHP. So that students
+              themselves can be able to develop projects and launch them LIVE on
+              IIP Academy Online Servers. Our Students had developed several
+              projects like wscubetech.com. Many students get easy job
+              placements due to their online Projects on the IIP Academy. We are
+              only institute in Jodhpur which provides free Web Hosting to our
+              students on our servers.
+            </p>
+            <p
+              style="
+                margin-left: 20px;
+                margin-top: 40px;
+                font-size: 18px;
+                word-spacing: 2px;
+              "
+            >
+              Engineering & MCA students can develop any small minor projects in
+              .NET or PHP and could extend as their Major Projects in further
+              years.
+            </p>
+            <p
+              style="
+                margin-left: 20px;
+                margin-top: 40px;
+                font-size: 18px;
+                word-spacing: 2px;
+              "
+            >
+            Minor Projects are really not hard to develop, as also the colleges generally are not strict in accepting the minor projects.Minor Projects can be small but it must be remarkable. Because details of Minor Projects are required to put in your Resume. And students with good minor projects can be easily placed in good companies during Campus Placements.  
+            </p>
+            <p
+            style="
+              margin-left: 20px;
+              margin-top: 40px;
+              font-size: 18px;
+              word-spacing: 2px;
+            "
+          >
+          
+          IIP Academy Provides 45 Days Industrial Training for Engineering (B.E. / B.TECH.) Students
+          </p>
+          <p>
+
+          </p>
+          <h3 style=" margin-top: 10px;margin-bottom: 20px; margin-left: 20px;">Why IIP Adacemy</h3>
+          <ol type="1" style="margin-left: 20px;">
+            <li>Live industrial projects</li>
+            <li>Expert Developers</li>
+            <li>Placement assistance.</li>
+            <li> 100% Practical</li>
+            <li> Interview preparation sessions.</li>
+          </ol>
+
+          </div>
+        </div>
+        At
+      </div>
+      <!-- middle part end here -->
+
+      <!-- >>>>> -->
+      <!-- <div class="work-heading">How We Work</div>
+      <div class="work-container">
+        <div class="how-img-box box first">
+          <div class="how-img1">
+            <div class="how-img1-color">
+              We Listen
+              <br />
+              To You
+            </div>
+          </div>
+        </div>
+        <div class="how-img-box">
+          <div class="how-img2">
+            <div class="how-img2-color">
+              We Plan
+              <br />
+              Your Work
+            </div>
+          </div>
+        </div>
+        <div class="how-img-box">
+          <div class="how-img3">
+            <div class="how-img3-color">
+              We Design
+              <br />
+              creativity
+            </div>
+          </div>
+        </div>
+        <div class="how-img-box">
+          <div class="how-img4">
+            <div class="how-img1-color">
+              We Execute
+              <br />
+              Publish &
+              <br />
+              Maintain
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- <<<<< -->
+
+      <!-- footer start here -->
+      <div class="footer">
+        <div class="footer-top-container">
+          <div class="quick-links-container">
+            <h2>Quick Links</h2>
+            <ul class="list2">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Enquiry</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-train-container">
+            <h2>Training</h2>
+            <div class="train-count">
+              <ul>
+                <li><a href="#">PHP(Web Development)</a></li>
+                <li><a href="#">Advance PHP</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">Android APP Development</a></li>
+                <li><a href="#">Digital Marketing</a></li>
+              </ul>
+            </div>
+            <!-- <div class="train-count">
+              <ul>
+                <li><a href="#">Graphic Design</a></li>
+                <li><a href="#">Search Engine Optimization</a></li>
+                <li><a href="#">Wordpress</a></li>
+                <li><a href="#">Web design</a></li>
+                <li><a href="#">Java</a></li>
+              </ul>
+            </div> -->
+          </div>
+          <div class="footer-train-container">
+            <div class="train-count">
+              <ul>
+                <li><a href="#">Graphic Design</a></li>
+                <li><a href="#">Search Engine Optimization</a></li>
+                <li><a href="#">Wordpress</a></li>
+                <li><a href="#">Web design</a></li>
+                <li><a href="#">Java</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-contact-container">
+            <h2>Contact Info</h2>
+            <ul id="contact-details">
+              <li>Call At: 9269698122</li>
+              <li>
+                1st floor, Laxmi Tower, Bhaskar Circle, Ratanda, Raj -
+                Jodhpur(342001)
+              </li>
+            </ul>
+            <ul class="social-links">
+              <li>
+                <a href="#"><img src="./images/instagram.png" alt="" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="./images/linked-in.png" alt="" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="./images/facebook.png" alt="" /></a>
+              </li>
+              <li>
+                <a href="#"><img src="./images/twitter.png" alt="" /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- footer end here -->
+    </div>
+  </body>
+</html>
